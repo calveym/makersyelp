@@ -8,6 +8,7 @@
 <h2><%= @restaurant.blurb %></h2>
 
 <h3>Reviews</h3>
+<p> Average Rating: </p> <div id="average-rating"> <%= @reviews.average(:rating) %> </div>
 <% if @reviews.nil?%>
   <p>
     Sorry, no reviews yet! Be the first to submit a review.
@@ -22,7 +23,7 @@
 
 
 <a href="javascript:window.location.href=window.location.href">Show location on map</a> <br>
-<a href="/restaurants/list">Go back to list of restaurants</a>
+<a href="/">Go back to list of restaurants</a>
 
 
 <div style='width: 800px;'>

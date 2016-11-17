@@ -19,6 +19,15 @@ Given (/^([0-9]+) restaurant(s)? exist(s)?$/) do |num_times, i, j|
                           "W1K2SE")}
 end
 
+And (/^has reviews with (.+)$/) do |ratings|
+  visit '/restaurants/1'
+  ratings.split(",").map(&:to_i).each do |rating|
+    fill_in_review_form(rating, "comment")
+    click_button "Add Review"
+  end
+end
+
+
 Then(/^I should see a (.*) element with ID "(.*)"$/) do |tag, id|
   element = find_by_id(id.to_s)
   element.assert_matches_selector(tag)

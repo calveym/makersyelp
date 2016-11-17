@@ -56,6 +56,9 @@ describe Review, type: :model do
       rev = Review.reflect_on_association(:restaurant)
       expect(rev.macro).to eq :belongs_to
     end
+
   end
 
+
+  
 end

@@ -8,6 +8,7 @@
    Description: <%= restaurant.description %> <br>
    Blurb: <%= restaurant.blurb %> <br>
    Postcode: <%= restaurant.postcode %> <br>
+   Average Rating: <div id="average-rating"> <%= Review.where(restaurant_id: restaurant.id).average(:rating) %> </div>
  </li>
  <% end %>
 </ul>
